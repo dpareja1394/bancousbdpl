@@ -1,0 +1,29 @@
+<div class="page-header">
+<br>
+  <h1>BancoWeb</h1>
+</div>
+
+	<br>
+	<div class="row">
+	<div class="col-xs-12 col-sm-12 col-md-12 " align="center">
+		<p class="light">Ingresa tus datos</p>
+	<form class="col-md-6">
+  <div class="form-group">
+   
+    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Usuario" #usuario>
+  </div>
+  <div class="form-group">
+   
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" #password>
+  </div>
+ 
+  <button type="button" class="btn btn-primary btn-block" (click)='login(usuario.value, password.value)'  >Ingresar</button>
+
+  <div class="alert alert-danger" *ngIf="mostrarMensaje==true" role="alert" >
+    Usuario o Password Incorrectos
+  </div>
+</form>
+
+</div>
+
+</div>

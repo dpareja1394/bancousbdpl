@@ -1,0 +1,47 @@
+<div class="page-header">
+    <br>
+      <h1>BancoWeb</h1>
+      <h3>{{nombreUsuario}}</h3>
+      <h3>Realizar Retiro</h3>
+      <button type="button" class="btn btn-primary" (click)='atras()'  >Ir atrás</button>
+    </div>  
+      <br>
+      <div class="row">
+      <div class="col-xs-12 col-sm-12 col-md-12 " align="center">
+        <h3 class="light">Datos del Retiro</h3>
+      <form class="col-md-6">
+      <div class="form-group">
+          <input type="text" 
+            [(ngModel)]="cuenta" name="cuenta" mask="0000-0000-0000-0000"
+          class="form-control" id="numeroCuenta" placeholder="Numero de Cuenta">
+      </div>
+      <div class="form-group">
+          <input 
+            [(ngModel)]="consigna" name="consigna" type="number"
+          class="form-control" id="valorConsignar" placeholder="Valor">
+      </div>
+      <div class="form-group">
+          <input type="number" 
+            [(ngModel)]="cliente" name="cliente"
+          class="form-control" id="cliente" placeholder="Id del Cliente">
+      </div>
+      <div class="form-group">
+          <input type="password" 
+            [(ngModel)]="clave" name="clave" 
+          class="form-control" id="claveCuenta" placeholder="Clave">
+      </div>
+  
+  
+      
+  
+      <button type="button" class="btn btn-success" (click)='realizarRetiro()'  >Retirar</button>
+      <button type="button" class="btn btn-secondary" (click)='limpiarFormularioRetiro()'  >Limpiar</button>
+      <br>
+      <br>
+      {{mensaje}}
+    </form>
+    
+    </div>
+    
+    </div>
+    
