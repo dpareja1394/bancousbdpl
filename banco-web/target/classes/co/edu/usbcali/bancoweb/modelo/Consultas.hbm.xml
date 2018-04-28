@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Abr 24, 2018 1:40:08 PM by Hibernate Tools 5.1.0.Final -->
+<hibernate-mapping>
+	<sql-query name="consultar_usuario_por_login">
+		<return-scalar column="usuUsuario" type="java.lang.String" />
+		<return-scalar column="clave" type="java.lang.String" />
+		<return-scalar column="identificacion" type="java.lang.Long" />
+		<return-scalar column="nombre" type="java.lang.String" />
+		<return-scalar column="activo" type="java.lang.String" />
+		<return-scalar column="nombreTipoUsuario" type="java.lang.String" />
+		<return-scalar column="tiusId_TipoUsuario" type="java.lang.Long" />
+		
+		
+		<![CDATA[				
+			select usua.usu_usuario as usuUsuario,
+				usua.clave as clave,
+				usua.identificacion as identificacion,
+				usua.nombre as nombre,
+				usua.activo as activo,
+				tius.nombre as nombreTipoUsuario,
+				tius.tius_id as tiusId_TipoUsuario
+			from usuario usua
+			inner join tipo_usuario tius on tius.tius_id = usua.tius_id
+			where usua.usu_usuario = :pUsu			
+		]]>
+	</sql-query>
+	
+	
+	
+</hibernate-mapping>
